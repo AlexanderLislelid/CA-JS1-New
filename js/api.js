@@ -30,7 +30,7 @@ export async function fetchAndRenderProducts() {
       addToCartButton.className = "add-button";
       anchor.href = `product/index.html?id=${product.id}`;
       anchor.textContent = "View Product";
-      addToCartButton.textContent = "add to cart";
+      addToCartButton.textContent = "Add to cart";
 
       image.src = product.image.url;
       image.alt = product.image.alt;
@@ -38,6 +38,28 @@ export async function fetchAndRenderProducts() {
 
       genre.textContent = product.genre;
       rating.textContent = `User rating: ${product.rating}`;
+
+      addToCartButton.addEventListener("click", () => {
+        let cart = JSON.parse(localStorage.getItem("cart")) || [];
+        const existing = cart.find((item) => item.id === product.id);
+
+        if (existing) {
+          existing.quantity = (existing.quantity || 1) + 1;
+        } else {
+          cart.push({
+            id: product.id,
+            title: product.title,
+            price: product.price || 0,
+            img: product.image.url,
+            quantity: 1,
+          });
+        }
+
+        localStorage.setItem("cart", JSON.stringify(cart));
+
+        addToCartButton.textContent = "Added!";
+        setTimeout(() => (addToCartButton.textContent = "Add to cart"), 1000);
+      });
 
       if (product.onSale === true) {
         price.textContent = `On sale: ${product.discountedPrice} Kr`;
@@ -108,6 +130,28 @@ export async function fetchAndCreateProduct() {
     backButton.textContent = "back to products";
     backButton.href = "../index.html";
     addToCartButton.textContent = "add to cart";
+
+    addToCartButton.addEventListener("click", () => {
+      let cart = JSON.parse(localStorage.getItem("cart")) || [];
+      const existing = cart.find((item) => item.id === product.id);
+
+      if (existing) {
+        existing.quantity = (existing.quantity || 1) + 1;
+      } else {
+        cart.push({
+          id,
+          title: product.title,
+          price: product.price || 0,
+          img: product.image?.url || "",
+          quantity: 1,
+        });
+      }
+
+      localStorage.setItem("cart", JSON.stringify(cart));
+
+      addToCartButton.textContent = "Added!";
+      setTimeout(() => (addToCartButton.textContent = "Add to cart"), 1000);
+    });
 
     if (product.onSale === true) {
       price.textContent = `On sale: ${product.discountedPrice} Kr`;
