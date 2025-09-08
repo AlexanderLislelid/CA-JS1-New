@@ -129,7 +129,7 @@ export async function fetchAndCreateProduct() {
     rating.textContent = product.rating;
     backButton.textContent = "back to products";
     backButton.href = "../index.html";
-    addToCartButton.textContent = "add to cart";
+    addToCartButton.textContent = "Add to cart";
 
     addToCartButton.addEventListener("click", () => {
       let cart = JSON.parse(localStorage.getItem("cart")) || [];
