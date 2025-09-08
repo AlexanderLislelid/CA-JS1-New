@@ -1,5 +1,6 @@
 const API_URL = "https://v2.api.noroff.dev/square-eyes";
 const container = document.querySelector("#container");
+
 export async function fetchAndRenderProducts() {
   try {
     const response = await fetch(API_URL);
@@ -30,23 +31,6 @@ export async function fetchAndRenderProducts() {
       anchor.href = `product/index.html?id=${product.id}`;
       anchor.textContent = "View Product";
       addToCartButton.textContent = "add to cart";
-
-      addToCartButton.addEventListener("click", (event) => {
-        event.preventDefault();
-        let cart = JSON.parse(localStorage.getItem("cart")) || [];
-        const cartItem = {
-          id: product.id,
-          title: product.title,
-          price: product.onSale ? product.discountedPrice : product.price,
-          image: product.image.url,
-        };
-        cart.push(cartItem);
-        localStorage.setItem("cart", JSON.stringify(cart));
-        addToCartButton.textContent = "Added!";
-        setTimeout(() => {
-          addToCartButton.textContent = "add to cart";
-        }, 1000);
-      });
 
       image.src = product.image.url;
       image.alt = product.image.alt;
@@ -124,23 +108,6 @@ export async function fetchAndCreateProduct() {
     backButton.textContent = "back to products";
     backButton.href = "../index.html";
     addToCartButton.textContent = "add to cart";
-
-    addToCartButton.addEventListener("click", (event) => {
-      event.preventDefault();
-      let cart = JSON.parse(localStorage.getItem("cart")) || [];
-      const cartItem = {
-        id: product.id,
-        title: product.title,
-        price: product.onSale ? product.discountedPrice : product.price,
-        image: product.image.url,
-      };
-      cart.push(cartItem);
-      localStorage.setItem("cart", JSON.stringify(cart));
-      addToCartButton.textContent = "Added!";
-      setTimeout(() => {
-        addToCartButton.textContent = "add to cart";
-      }, 1000);
-    });
 
     if (product.onSale === true) {
       price.textContent = `On sale: ${product.discountedPrice} Kr`;
