@@ -29,3 +29,24 @@ body {
   text-align: center;
   padding: 1rem;
 }
+/* Overlay */
+
+#cart-overlay {
+  display: none;
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.5);
+}
+
+#cart-overlay.open {
+  display: block;
+}
+
+.cart-panel {
+  position: absolute;
+  right: 1rem;
+  top: 1rem;
+  width: 320px;
+  background: #fff;
+  padding: 1rem;
+}
