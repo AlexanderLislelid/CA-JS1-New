@@ -28,3 +28,7 @@ export function renderCart() {
 
   sumEl.textContent = `Total: ${total} Kr`;
 }
+
+export function getCart() {
+  return JSON.parse(localStorage.getItem("cart")) || [];
+}

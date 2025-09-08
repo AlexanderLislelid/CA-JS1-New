@@ -49,4 +49,8 @@ body {
   width: 320px;
   background: #fff;
   padding: 1rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  text-align: center;
 }
