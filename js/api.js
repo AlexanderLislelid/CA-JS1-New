@@ -16,6 +16,7 @@ export async function fetchAndRenderProducts() {
       const price = document.createElement("p");
       const discountedPrice = document.createElement("p");
       const anchor = document.createElement("a");
+      const addToCartButton = document.createElement("button");
 
       card.className = "card";
       image.className = "card-image";
@@ -25,7 +26,27 @@ export async function fetchAndRenderProducts() {
       rating.className = "card-rating";
       price.className = "card-price";
       discountedPrice.className = "card-price-discount";
+      addToCartButton.className = "add-button";
       anchor.href = `product/index.html?id=${product.id}`;
+      anchor.textContent = "View Product";
+      addToCartButton.textContent = "add to cart";
+
+      addToCartButton.addEventListener("click", (event) => {
+        event.preventDefault();
+        let cart = JSON.parse(localStorage.getItem("cart")) || [];
+        const cartItem = {
+          id: product.id,
+          title: product.title,
+          price: product.onSale ? product.discountedPrice : product.price,
+          image: product.image.url,
+        };
+        cart.push(cartItem);
+        localStorage.setItem("cart", JSON.stringify(cart));
+        addToCartButton.textContent = "Added!";
+        setTimeout(() => {
+          addToCartButton.textContent = "add to cart";
+        }, 1000);
+      });
 
       image.src = product.image.url;
       image.alt = product.image.alt;
@@ -39,14 +60,18 @@ export async function fetchAndRenderProducts() {
       } else {
         price.textContent = `${product.price} Kr`;
       }
+
       content.appendChild(title);
       content.appendChild(rating);
       content.appendChild(price);
       content.appendChild(genre);
+      content.appendChild(anchor);
+      content.appendChild(addToCartButton);
+
       card.appendChild(image);
       card.appendChild(content);
-      anchor.appendChild(card);
-      container.appendChild(anchor);
+
+      container.appendChild(card);
     });
   } catch (error) {
     console.error(error, "Failed to fetch products");
@@ -76,10 +101,11 @@ export async function fetchAndCreateProduct() {
     const price = document.createElement("p");
     const discountedPrice = document.createElement("p");
     const backButton = document.createElement("a");
+    const addToCartButton = document.createElement("button");
 
     productDiv.className = "product-details";
     image.className = "product-image";
-    infoDiv.classname = "product-info";
+    infoDiv.className = "product-info";
     title.className = "product-title";
     description.className = "product-description";
     genre.className = "product-genre";
@@ -87,6 +113,7 @@ export async function fetchAndCreateProduct() {
     price.className = "product-price";
     discountedPrice.className = "product-price-discount";
     backButton.className = "back-button";
+    addToCartButton.className = "add-button";
 
     image.src = product.image.url;
     image.alt = product.image.alt;
@@ -96,6 +123,24 @@ export async function fetchAndCreateProduct() {
     rating.textContent = product.rating;
     backButton.textContent = "back to products";
     backButton.href = "../index.html";
+    addToCartButton.textContent = "add to cart";
+
+    addToCartButton.addEventListener("click", (event) => {
+      event.preventDefault();
+      let cart = JSON.parse(localStorage.getItem("cart")) || [];
+      const cartItem = {
+        id: product.id,
+        title: product.title,
+        price: product.onSale ? product.discountedPrice : product.price,
+        image: product.image.url,
+      };
+      cart.push(cartItem);
+      localStorage.setItem("cart", JSON.stringify(cart));
+      addToCartButton.textContent = "Added!";
+      setTimeout(() => {
+        addToCartButton.textContent = "add to cart";
+      }, 1000);
+    });
 
     if (product.onSale === true) {
       price.textContent = `On sale: ${product.discountedPrice} Kr`;
@@ -109,6 +154,7 @@ export async function fetchAndCreateProduct() {
     infoDiv.appendChild(genre);
     infoDiv.appendChild(rating);
     infoDiv.appendChild(price);
+    infoDiv.appendChild(addToCartButton);
     infoDiv.appendChild(backButton);
 
     container.appendChild(productDiv);
