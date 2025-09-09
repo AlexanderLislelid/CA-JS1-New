@@ -19,9 +19,50 @@
       </ul>
     </nav>
     <section class="checkout">
-      <h1>Checkout</h1>
-      <div id="checkout-container"></div>
-      <p id="checkout-total"></p>
+      <div class="items-checkout">
+        <h1>Checkout</h1>
+        <div id="checkout-container"></div>
+        <p id="checkout-total"></p>
+      </div>
+      <form id="checkout-form">
+        <label for="fname">First name:</label>
+        <input type="text" id="fname" name="fname" placeholder="Ola" />
+        <label for="lname">Last name:</label>
+        <input type="text" id="lname" name="lname" placeholder="Nordmann" />
+        <label for="adress">Adress:</label>
+        <input
+          type="text"
+          id="adress"
+          name="adress"
+          placeholder="Geitevegen 7"
+        />
+        <label for="country">Country:</label>
+        <select id="country" name="country">
+          <option value="">Choose a country</option>
+          <option value="no">Norway</option>
+          <option value="se">Sweden</option>
+          <option value="dk">Denmark</option>
+        </select>
+        <label for="zip">Zip code</label>
+        <input type="text" id="zip" name="zip" placeholder="5738" />
+        <label for="payment">Card type:</label>
+        <select id="payment" name="payment">
+          <option value="">Choose a card type</option>
+          <option value="visa">Visa</option>
+          <option value="mc">Mastercard</option>
+          <option value="paypal">Paypal</option>
+        </select>
+        <label for="cardnumber">Cardnumber</label>
+        <input
+          type="text"
+          id="cardnumber"
+          name="cardnumber"
+          placeholder="1111 2222 3333 4444"
+        />
+        <label for="cvc">cvc</label>
+        <input type="text" id="cvc" name="cvc" placeholder="002" />
+        <button type="submit">Order Now</button>
+      </form>
     </section>
     <footer></footer>
   </body>

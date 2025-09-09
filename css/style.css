@@ -27,7 +27,6 @@ nav ul {
 .products-container {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(300px, 300px));
-  justify-content: center;
 }
 
 .card {
@@ -68,4 +67,14 @@ nav ul {
   flex-direction: column;
   justify-content: center;
   text-align: center;
+}
+
+/* --------Checkout--------*/
+
+#checkout-form {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  max-width: 400px;
+  margin: 0 auto;
 }
