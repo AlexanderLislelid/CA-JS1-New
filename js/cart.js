@@ -32,3 +32,7 @@ export function renderCart() {
 export function getCart() {
   return JSON.parse(localStorage.getItem("cart")) || [];
 }
+
+export function clearCart() {
+  localStorage.clear("cart");
+}

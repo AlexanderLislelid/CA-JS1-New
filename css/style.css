@@ -9,6 +9,20 @@ body {
   margin: 0 auto;
 }
 
+/*------Navigation---------*/
+
+li {
+  list-style: none;
+}
+nav ul {
+  display: flex;
+  flex-direction: row;
+  gap: 2rem;
+  justify-content: flex-end;
+  margin-right: 2rem;
+  padding-top: 2rem;
+}
+
 /* ------Homepage--------- */
 .products-container {
   display: grid;

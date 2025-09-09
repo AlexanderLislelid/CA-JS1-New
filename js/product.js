@@ -1,5 +1,5 @@
 import { fetchAndCreateProduct } from "./api.js";
-import { renderCart } from "./cart.js";
+import { renderCart, clearCart } from "./cart.js";
 renderCart();
 fetchAndCreateProduct();
 
@@ -20,4 +20,11 @@ overlay.addEventListener("click", (e) => {
   if (e.target === overlay) {
     overlay.classList.remove("open");
   }
+});
+
+const clearBtn = document.querySelector("#clear-cart");
+clearBtn.addEventListener("click", (event) => {
+  event.preventDefault();
+  clearCart();
+  renderCart();
 });
