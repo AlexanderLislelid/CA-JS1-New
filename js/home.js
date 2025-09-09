@@ -39,38 +39,47 @@ const filterComedy = document.querySelector(".comedy");
 const filterDrama = document.querySelector(".drama");
 const filterHorror = document.querySelector(".horror");
 const filterOnSale = document.querySelector(".on-sale");
+let highLighted = document.querySelector(".highlighted");
+console.log(highLighted);
 
 filterAll.addEventListener("click", (event) => {
   event.preventDefault();
   fetchAndRenderProducts();
+  highLighted.textContent = "All Movies";
 });
 
 filterAction.addEventListener("click", (event) => {
   event.preventDefault();
   fetchAndRenderProducts("Action");
+  highLighted.textContent = "Action";
 });
 
 filterKids.addEventListener("click", (event) => {
   event.preventDefault();
   fetchAndRenderProducts("Kids");
+  highLighted.textContent = "Kids";
 });
 
 filterHorror.addEventListener("click", (event) => {
   event.preventDefault();
   fetchAndRenderProducts("Horror");
+  highLighted.textContent = "Horror";
 });
 
 filterComedy.addEventListener("click", (event) => {
   event.preventDefault();
   fetchAndRenderProducts("Comedy");
+  highLighted.textContent = "Comedy";
 });
 
 filterDrama.addEventListener("click", (event) => {
   event.preventDefault();
   fetchAndRenderProducts("Drama");
+  highLighted.textContent = "Drama";
 });
 
 filterOnSale.addEventListener("click", (event) => {
   event.preventDefault();
   fetchAndRenderProducts("on-sale");
+  highLighted.textContent = "On Sale";
 });
