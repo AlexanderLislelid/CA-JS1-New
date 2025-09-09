@@ -1,11 +1,24 @@
 const API_URL = "https://v2.api.noroff.dev/square-eyes";
 const container = document.querySelector("#container");
 
-export async function fetchAndRenderProducts() {
+export async function fetchAndRenderProducts(filterGenre = null) {
   try {
+    container.innerHTML = "";
     const response = await fetch(API_URL);
     const data = await response.json();
-    const products = data.data;
+    let products = data.data;
+
+    if (filterGenre) {
+      if (filterGenre === "on-sale") {
+        products = products.filter((product) => product.onSale === true);
+      } else {
+        products = products.filter(
+          (product) =>
+            product.genre &&
+            product.genre.toLowerCase() === filterGenre.toLowerCase()
+        );
+      }
+    }
 
     products.forEach((product) => {
       const card = document.createElement("div");

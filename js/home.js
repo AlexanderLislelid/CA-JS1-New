@@ -29,3 +29,48 @@ clearBtn.addEventListener("click", (event) => {
   clearCart();
   renderCart();
 });
+
+//-----------Filtering
+
+const filterAll = document.querySelector(".all");
+const filterAction = document.querySelector(".action");
+const filterKids = document.querySelector(".kids");
+const filterComedy = document.querySelector(".comedy");
+const filterDrama = document.querySelector(".drama");
+const filterHorror = document.querySelector(".horror");
+const filterOnSale = document.querySelector(".on-sale");
+
+filterAll.addEventListener("click", (event) => {
+  event.preventDefault();
+  fetchAndRenderProducts();
+});
+
+filterAction.addEventListener("click", (event) => {
+  event.preventDefault();
+  fetchAndRenderProducts("Action");
+});
+
+filterKids.addEventListener("click", (event) => {
+  event.preventDefault();
+  fetchAndRenderProducts("Kids");
+});
+
+filterHorror.addEventListener("click", (event) => {
+  event.preventDefault();
+  fetchAndRenderProducts("Horror");
+});
+
+filterComedy.addEventListener("click", (event) => {
+  event.preventDefault();
+  fetchAndRenderProducts("Comedy");
+});
+
+filterDrama.addEventListener("click", (event) => {
+  event.preventDefault();
+  fetchAndRenderProducts("Drama");
+});
+
+filterOnSale.addEventListener("click", (event) => {
+  event.preventDefault();
+  fetchAndRenderProducts("on-sale");
+});

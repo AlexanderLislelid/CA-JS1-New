@@ -26,7 +26,8 @@ nav ul {
 /* ------Homepage--------- */
 .products-container {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(300px, 300px));
+  justify-content: center;
 }
 
 .card {
@@ -43,7 +44,7 @@ nav ul {
   text-align: center;
   padding: 1rem;
 }
-/* Overlay */
+/*-----Cart Overlay -------*/
 
 #cart-overlay {
   display: none;
