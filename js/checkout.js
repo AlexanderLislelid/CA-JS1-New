@@ -1,4 +1,4 @@
-import { getCart } from "./cart.js";
+import { getCart, clearCart } from "./cart.js";
 
 function renderCheckout() {
   const container = document.getElementById("checkout-container");
@@ -43,3 +43,13 @@ function renderCheckout() {
   }
 }
 renderCheckout();
+
+const form = document.forms["checkout-form"];
+if (form) {
+  form.addEventListener("submit", (event) => {
+    event.preventDefault();
+    clearCart();
+    renderCheckout();
+    window.location.href = "../checkout/confirmation/index.html";
+  });
+}

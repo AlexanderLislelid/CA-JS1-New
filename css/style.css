@@ -78,3 +78,10 @@ nav ul {
   max-width: 400px;
   margin: 0 auto;
 }
+
+#checkout-form input,
+#checkout-form select,
+#checkout-form button {
+  padding: 0.5rem;
+  font-size: 1rem;
+}
