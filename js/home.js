@@ -81,5 +81,5 @@ filterDrama.addEventListener("click", (event) => {
 filterOnSale.addEventListener("click", (event) => {
   event.preventDefault();
   fetchAndRenderProducts("on-sale");
-  highLighted.textContent = "On Sale";
+  highLighted.textContent = "On sale";
 });

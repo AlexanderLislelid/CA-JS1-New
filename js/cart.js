@@ -1,3 +1,9 @@
+export function deleteFromCart(id) {
+  let cart = JSON.parse(localStorage.getItem("cart")) || [];
+  cart = cart.filter((item) => item.id !== id);
+  localStorage.setItem("cart", JSON.stringify(cart));
+}
+
 export function renderCart() {
   let cart = [];
 
@@ -6,27 +12,35 @@ export function renderCart() {
   }
 
   const container = document.getElementById("cart-container");
-  const sumEl = document.getElementById("cart-sum");
+  const sum = document.getElementById("cart-sum");
 
   container.innerHTML = "";
   let total = 0;
 
   if (cart.length === 0) {
     container.textContent = "Your cart is empty.";
-    sumEl.textContent = "";
+    sum.textContent = "";
     return;
   }
 
   cart.forEach((item) => {
-    const line = document.createElement("div");
-    line.className = "cart-item";
-    line.textContent = `${item.title} – ${item.price} Kr x ${item.quantity}`;
-    container.appendChild(line);
+    const cartItem = document.createElement("div");
+    cartItem.className = "cart-item";
+    cartItem.textContent = `${item.title} - ${item.price} Kr x ${item.quantity}`;
+
+    const removeBtn = document.createElement("button");
+    removeBtn.textContent = "Remove";
+    removeBtn.onclick = () => {
+      deleteFromCart(item.id);
+      renderCart();
+    };
+    cartItem.appendChild(removeBtn);
+    container.appendChild(cartItem);
 
     total += item.price * item.quantity;
   });
 
-  sumEl.textContent = `Total: ${total} Kr`;
+  sum.textContent = `Total: ${total} Kr`;
 }
 
 export function getCart() {
