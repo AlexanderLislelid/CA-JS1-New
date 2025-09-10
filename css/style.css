@@ -6,11 +6,28 @@
   box-sizing: border-box;
 }
 
+html,
+body {
+  height: 100%;
+  margin: 0;
+}
+
 body {
   max-width: 1200px;
   margin: 0 auto;
   font-family: var(--font-body);
   background-color: var(--color-background);
+
+  display: flex;
+  flex-direction: column;
+}
+
+main {
+  flex: 1;
+}
+
+footer {
+  margin-top: auto;
 }
 h1,
 h2,
@@ -308,6 +325,45 @@ nav ul {
   margin-top: 0.8rem;
   text-align: center;
 }
+
+/*------Footer--------*/
+
+footer {
+  display: grid;
+  background-color: var(--color-card);
+  padding: 2rem;
+  grid-template-columns: 1fr 1fr;
+  gap: 2rem;
+  grid-template-areas:
+    "legal social"
+    "copy  copy";
+}
+footer .legal {
+  grid-area: legal;
+}
+footer .social-media {
+  grid-area: social;
+}
+footer p {
+  grid-area: copy;
+  text-align: center;
+}
+.legal,
+.social-media {
+  text-align: center;
+}
+.legal a,
+.social-media a {
+  margin: 2rem;
+}
+.legal a:hover,
+.social-media a:hover {
+  color: var(--color-accent);
+}
+footer p {
+  color: var(--color-text-secondary);
+  font-weight: 400;
+}
 /*----Media Queries-----*/
 
 @media (max-width: 900px) {
@@ -319,5 +375,19 @@ nav ul {
   }
   .products-container {
     justify-content: center;
+  }
+}
+@media (max-width: 600px) {
+  footer {
+    grid-template-columns: 1fr;
+    grid-template-areas:
+      "legal"
+      "social"
+      "copy";
+  }
+
+  footer .legal,
+  footer .social-media {
+    text-align: center; /* sentrerer innholdet på mobil */
   }
 }
