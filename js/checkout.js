@@ -29,7 +29,7 @@ function renderCheckout() {
     const q = Number(product.quantity || 1);
     const p = Number(product.price || 0);
 
-    title.textContent = product.title;
+    title.textContent = `${product.title} -`;
     price.textContent = `${p} Kr`;
     qty.textContent = `x ${q}`;
 
