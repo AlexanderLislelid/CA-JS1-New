@@ -89,10 +89,15 @@ nav ul {
   border: solid 1px black;
   color: var(--color-text);
 }
+
+.card button:hover {
+  background-color: var(--color-hover);
+  transform: scale(1.05);
+  transition: 0.2s ease;
+}
 .card h2 {
   font-size: 1.1rem;
 }
-
 #genre-filtering {
   margin-top: 2rem;
   margin-left: 2rem;
