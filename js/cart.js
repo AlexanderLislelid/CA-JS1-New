@@ -29,7 +29,8 @@ export function renderCart() {
     cartItem.textContent = `${item.title} - ${item.price} Kr x ${item.quantity}`;
 
     const removeBtn = document.createElement("button");
-    removeBtn.textContent = "Remove";
+    removeBtn.className = "remove-button";
+    removeBtn.innerHTML = '<i class="fa-solid fa-trash-can"></i>';
     removeBtn.onclick = () => {
       deleteFromCart(item.id);
       renderCart();

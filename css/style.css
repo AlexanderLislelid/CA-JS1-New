@@ -26,6 +26,10 @@ a {
 a {
   text-decoration: none;
 }
+button {
+  all: unset;
+  cursor: pointer;
+}
 /*------Navigation---------*/
 .navbar {
   position: sticky;
@@ -43,7 +47,8 @@ nav ul {
   gap: 2rem;
   justify-content: flex-end;
   margin-right: 2rem;
-  padding-top: 2rem;
+  padding-top: 1rem;
+  padding-bottom: 1rem;
 }
 
 /* ------Homepage--------- */
@@ -72,16 +77,31 @@ nav ul {
   padding-right: 2rem;
   padding-top: 0.5rem;
   padding-bottom: 0.5rem;
-  cursor: pointer;
+  background-color: var(--color-accent);
+  border-radius: 5px;
+  border: solid 1px black;
+  color: var(--color-text);
 }
 .card h2 {
-  font-size: 1rem;
+  font-size: 1.1rem;
 }
+
 #genre-filtering {
+  margin-top: 2rem;
   margin-left: 2rem;
 }
 #genre-filtering p {
   margin-bottom: 1rem;
+}
+#genre-filtering button {
+  border: 2px solid var(--color-accent);
+  color: var(--color-text);
+  padding: 0.5rem;
+  border-radius: 5px;
+  margin: 0.2rem;
+}
+#genre-filtering button:hover {
+  background-color: var(--color-accent);
 }
 .highlighted {
   margin-left: 1rem;
@@ -104,6 +124,44 @@ nav ul {
 }
 #cart-container {
   color: var(--color-text);
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 1rem;
+  gap: 0.3rem;
+}
+.cart-item {
+  display: grid;
+  grid-template-columns: 9fr 1fr;
+  border-bottom: 1px solid var(--color-text-secondary);
+  color: var(--color-text);
+  padding-bottom: 0.3rem;
+  padding-top: 0.3rem;
+}
+.remove-button i {
+  color: #e0533f;
+}
+.cart-btns {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  margin-top: 1rem;
+  margin-bottom: 0.5rem;
+  gap: 0.5rem;
+}
+#clear-cart {
+  background-color: var(--color-text-secondary);
+}
+#close-cart {
+  background-color: var(--color-text);
+}
+#clear-cart,
+#close-cart {
+  padding-top: 0.3rem;
+  padding-bottom: 0.3rem;
+}
+.checkout-btn {
+  background-color: var(--color-accent);
+  padding-top: 0.5rem;
+  padding-bottom: 0.5rem;
 }
 .cart-panel {
   position: absolute;
@@ -117,8 +175,12 @@ nav ul {
   justify-content: center;
   text-align: center;
 }
-.cart-item {
-  color: var(--color-text);
+.cart-panel h2 {
+  margin-bottom: 1rem;
+}
+#cart-sum {
+  margin-top: 1rem;
+  margin-bottom: 1rem;
 }
 /* --------Checkout--------*/
 .items-checkout {
