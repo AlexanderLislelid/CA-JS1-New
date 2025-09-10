@@ -1,4 +1,5 @@
 import { getCart, clearCart, renderCart } from "./cart.js";
+import { renderCheckout } from "./checkout.js";
 getCart();
 
 const cartBtn = document.getElementById("cart");

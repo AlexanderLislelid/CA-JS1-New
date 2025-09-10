@@ -26,7 +26,7 @@ clearBtn.addEventListener("click", (event) => {
   renderCart();
   renderCheckout();
 });
-function renderCheckout() {
+export function renderCheckout() {
   const container = document.getElementById("checkout-container");
   const totalDisplay = document.getElementById("checkout-total");
   if (!container) return;
