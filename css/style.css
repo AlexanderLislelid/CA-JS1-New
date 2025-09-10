@@ -284,4 +284,7 @@ nav ul {
     justify-content: left;
     gap: 0.5rem;
   }
+  .products-container {
+    justify-content: center;
+  }
 }
