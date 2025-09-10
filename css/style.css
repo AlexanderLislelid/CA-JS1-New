@@ -23,7 +23,16 @@ p,
 a {
   color: var(--color-text);
 }
+a {
+  text-decoration: none;
+}
 /*------Navigation---------*/
+.navbar {
+  position: sticky;
+  top: 0;
+  z-index: 10;
+  background-color: var(--color-card);
+}
 
 li {
   list-style: none;
@@ -48,6 +57,7 @@ nav ul {
   flex-direction: column;
   border: 2px solid black;
   margin: 2rem;
+  background-color: var(--color-card);
 }
 .card-content {
   display: flex;
@@ -78,12 +88,15 @@ nav ul {
   color: var(--color-accent);
 }
 /*-----Cart Overlay -------*/
-
+.fa-solid {
+  color: var(--color-text);
+}
 #cart-overlay {
   display: none;
   position: fixed;
   inset: 0;
   background: rgba(0, 0, 0, 0.5);
+  z-index: 20;
 }
 
 #cart-overlay.open {
@@ -95,7 +108,7 @@ nav ul {
 .cart-panel {
   position: absolute;
   right: 1rem;
-  top: 1rem;
+  top: 4rem;
   width: 320px;
   background-color: var(--color-background);
   padding: 1rem;

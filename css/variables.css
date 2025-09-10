@@ -3,9 +3,10 @@
 :root {
   --font-heading: "Montserrat", sans-serif;
   --font-body: "Lato", sans-serif;
-  --color-background: #1c1c1c;
+  --color-background: #141414;
+  --color-card: #1f1f1f;
   --color-text: #f5f5f5;
   --color-text-secondary: #cccccc;
-  --color-accent: #ff4500;
+  --color-accent: #e50914;
   --color-highlight: #ffd700;
 }
