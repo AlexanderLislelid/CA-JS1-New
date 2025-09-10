@@ -39,17 +39,60 @@ function renderCheckout() {
     total += p * q;
   });
   if (totalDisplay) {
-    totalDisplay.textContent = `Total: ${total} Kr`;
+    totalDisplay.textContent = `Total: ${total.toFixed(2)} Kr`;
   }
 }
 renderCheckout();
+
+//------------------------form validation
+function validateForm() {
+  let firstName = form["fname"].value;
+  let lastName = form["lname"].value;
+  let adress = form["adress"].value;
+  let country = form["country"].value;
+  let zip = form["zip"].value;
+  let cardType = form["payment"].value;
+  let cardNumber = form["cardnumber"].value;
+  let cvc = form["cvc"].value;
+
+  if (firstName == "") {
+    alert("Name must be filled out!");
+    return false;
+  } else if (lastName == "") {
+    alert("Name must be filled out!");
+    return false;
+  } else if (adress == "") {
+    alert("Adress must be filled out!");
+    return false;
+  } else if (country == "") {
+    alert("Choose your country");
+    return false;
+  } else if (zip == "" || isNaN(zip)) {
+    alert("Enter your zip-code");
+    return false;
+  } else if (cardType == "") {
+    alert("Choose your card type");
+    return false;
+  } else if (cardNumber == "" || isNaN(cardNumber)) {
+    alert("Enter your card-number");
+    return false;
+  } else if (cvc == "" || isNaN(cvc)) {
+    alert("Enter CVC");
+    return false;
+  } else {
+    return true;
+  }
+}
 
 const form = document.forms["checkout-form"];
 if (form) {
   form.addEventListener("submit", (event) => {
     event.preventDefault();
-    clearCart();
-    renderCheckout();
-    window.location.href = "../checkout/confirmation/index.html";
+    const isValid = validateForm();
+    if (isValid === true) {
+      window.location.href = "../checkout/confirmation/index.html";
+      clearCart();
+      renderCheckout();
+    }
   });
 }

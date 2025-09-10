@@ -40,7 +40,7 @@ export function renderCart() {
     total += item.price * item.quantity;
   });
 
-  sum.textContent = `Total: ${total} Kr`;
+  sum.textContent = `Total: ${total.toFixed(2)} Kr`;
 }
 
 export function getCart() {
