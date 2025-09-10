@@ -63,13 +63,22 @@ nav ul {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(300px, 300px));
 }
-
+.card img {
+  border-top-left-radius: 8px;
+  border-top-right-radius: 8px;
+}
 .card {
   display: flex;
   flex-direction: column;
-  border: 2px solid black;
+  border: 1px solid #ffffff1a;
+  transition: box-shadow 0.3s ease, border-color 0.3s ease;
+  border-radius: 8px;
   margin: 2rem;
   background-color: var(--color-card);
+}
+.card:hover {
+  border-color: var(--color-accent);
+  box-shadow: 0 0 10px rgba(10, 132, 255, 0.5);
 }
 .card-content {
   display: flex;
@@ -79,7 +88,15 @@ nav ul {
   text-align: center;
   padding: 1rem;
 }
-.card button {
+.card-content a {
+  font-weight: 500;
+  cursor: pointer;
+}
+.card-content a:hover {
+  color: var(--color-accent);
+}
+.card button,
+.add-button {
   padding-left: 2rem;
   padding-right: 2rem;
   padding-top: 0.5rem;
@@ -89,12 +106,19 @@ nav ul {
   border: solid 1px black;
   color: var(--color-text);
 }
-
-.card button:hover {
+.card button:hover,
+.add-button:hover {
   background-color: var(--color-hover);
   transform: scale(1.05);
   transition: 0.2s ease;
 }
+.card-rating {
+  color: var(--color-rating);
+}
+.card-genre {
+  color: var(--color-text-secondary);
+}
+
 .card h2 {
   font-size: 1.1rem;
 }
@@ -119,6 +143,43 @@ nav ul {
   margin-left: 1rem;
   color: var(--color-accent);
 }
+
+/*-------Single Product Page*/
+.single-product-container img {
+  width: 100%;
+}
+.single-product-container {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  justify-content: center;
+
+  gap: 4rem;
+  margin: 3rem;
+}
+.product-info p {
+  margin-top: 1rem;
+  letter-spacing: 1.5px;
+}
+.product-price {
+  margin-bottom: 1rem;
+  font-weight: 700;
+}
+.back-button {
+  padding-left: 2rem;
+  padding-right: 2rem;
+  padding-top: 0.5rem;
+  padding-bottom: 0.5rem;
+  background-color: var(--color-text-secondary);
+  border-radius: 5px;
+  border: solid 1px black;
+  color: var(--color-background);
+}
+.back-button:hover {
+  background-color: var(--color-text);
+  transform: scale(1.05);
+  transition: 0.2s ease;
+}
+
 /*-----Cart Overlay -------*/
 .fa-solid {
   color: var(--color-text);
@@ -212,4 +273,15 @@ nav ul {
 #checkout-form button {
   padding: 0.5rem;
   font-size: 1rem;
+}
+
+/*----Media Queries-----*/
+
+@media (max-width: 900px) {
+  .product-button-div {
+    display: grid;
+    align-items: center;
+    justify-content: left;
+    gap: 0.5rem;
+  }
 }

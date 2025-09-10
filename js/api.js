@@ -50,7 +50,7 @@ export async function fetchAndRenderProducts(filterGenre = null) {
       title.textContent = product.title;
 
       genre.textContent = product.genre;
-      rating.textContent = `User rating: ${product.rating}`;
+      rating.textContent = `⭐ ${product.rating}`;
 
       addToCartButton.addEventListener("click", () => {
         let cart = JSON.parse(localStorage.getItem("cart")) || [];
@@ -75,7 +75,8 @@ export async function fetchAndRenderProducts(filterGenre = null) {
       });
 
       if (product.onSale === true) {
-        price.textContent = `On sale: ${product.discountedPrice} Kr`;
+        price.textContent = `${product.discountedPrice} Kr`;
+        price.style.color = "#4ade80";
       } else {
         price.textContent = `${product.price} Kr`;
       }
@@ -121,6 +122,7 @@ export async function fetchAndCreateProduct() {
     const discountedPrice = document.createElement("p");
     const backButton = document.createElement("a");
     const addToCartButton = document.createElement("button");
+    const buttonDiv = document.createElement("div");
 
     productDiv.className = "product-details";
     image.className = "product-image";
@@ -133,14 +135,15 @@ export async function fetchAndCreateProduct() {
     discountedPrice.className = "product-price-discount";
     backButton.className = "back-button";
     addToCartButton.className = "add-button";
+    buttonDiv.className = "product-button-div";
 
     image.src = product.image.url;
     image.alt = product.image.alt;
     title.textContent = product.title;
     description.textContent = product.description;
     genre.textContent = product.genre;
-    rating.textContent = product.rating;
-    backButton.textContent = "back to products";
+    rating.textContent = `⭐ ${product.rating}`;
+    backButton.textContent = "Back to products";
     backButton.href = "../index.html";
     addToCartButton.textContent = "Add to cart";
 
@@ -167,19 +170,20 @@ export async function fetchAndCreateProduct() {
     });
 
     if (product.onSale === true) {
-      price.textContent = `On sale: ${product.discountedPrice} Kr`;
+      price.textContent = `${product.discountedPrice} Kr`;
+      price.style.color = "#4ade80";
     } else {
       price.textContent = `${product.price} Kr`;
     }
 
     productDiv.appendChild(image);
     infoDiv.appendChild(title);
-    infoDiv.appendChild(description);
     infoDiv.appendChild(genre);
+    infoDiv.appendChild(description);
     infoDiv.appendChild(rating);
     infoDiv.appendChild(price);
-    infoDiv.appendChild(addToCartButton);
-    infoDiv.appendChild(backButton);
+    buttonDiv.append(addToCartButton, backButton);
+    infoDiv.appendChild(buttonDiv);
 
     container.appendChild(productDiv);
     container.appendChild(infoDiv);
