@@ -37,6 +37,10 @@ button {
   z-index: 10;
   background-color: var(--color-card);
 }
+.active {
+  color: var(--color-accent);
+  font-weight: 600;
+}
 #cart {
   color: var(--color-accent);
   padding: 0.7rem;
