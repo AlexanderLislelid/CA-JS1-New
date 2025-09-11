@@ -95,6 +95,10 @@ export async function fetchAndRenderProducts(filterGenre = null) {
     });
   } catch (error) {
     console.error(error, "Failed to fetch products");
+    alert(
+      "Something went wrong while loading products. PLease try again later"
+    );
+    container.textContent = "failed to load products";
   }
 }
 
@@ -189,5 +193,9 @@ export async function fetchAndCreateProduct() {
     container.appendChild(infoDiv);
   } catch (error) {
     console.error(error, "failed to fetch data");
+    alert(
+      "Something went wrong while loading the product. please try again later"
+    );
+    container.textContent = "failed to load product";
   }
 }
