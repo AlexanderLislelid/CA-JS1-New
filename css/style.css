@@ -304,6 +304,9 @@ nav ul {
   margin-top: 1rem;
   margin-bottom: 1rem;
 }
+.add-button {
+  text-align: center;
+}
 /* --------Checkout--------*/
 .items-checkout {
   color: var(--color-text);
@@ -401,6 +404,10 @@ footer p {
   display: inline-block;
   margin-top: 1rem;
 }
+/*------Profile-------*/
+.acc-details p {
+  margin-bottom: 0.8rem;
+}
 /*------Terms of use-------*/
 
 .terms li {
@@ -429,7 +436,7 @@ footer p {
     justify-content: center;
   }
 }
-@media (max-width: 600px) {
+@media (max-width: 750px) {
   footer {
     grid-template-columns: 1fr;
     grid-template-areas:
@@ -441,5 +448,8 @@ footer p {
   footer .legal,
   footer .social-media {
     text-align: center;
+  }
+  footer a {
+    display: inline-block;
   }
 }
