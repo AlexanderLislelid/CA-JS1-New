@@ -67,7 +67,7 @@ button {
   border-radius: 50%;
   border: 1px solid var(--color-accent);
 }
-li {
+.navbar li {
   list-style: none;
 }
 nav ul {
@@ -378,7 +378,21 @@ footer p {
   display: inline-block;
   margin-top: 1rem;
 }
+/*------Terms of use-------*/
 
+.terms li {
+  color: var(--color-text-secondary);
+  margin: 0.3rem;
+  list-style: none;
+}
+.terms {
+  margin-bottom: 3rem;
+}
+.terms h2 {
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+  font-size: 1.2rem;
+}
 /*----Media Queries-----*/
 
 @media (max-width: 900px) {
