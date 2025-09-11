@@ -395,7 +395,7 @@ footer p {
 }
 /*----Media Queries-----*/
 
-@media (max-width: 900px) {
+@media (max-width: 910px) {
   .product-button-div {
     display: grid;
     align-items: center;
