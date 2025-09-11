@@ -1,7 +1,9 @@
 const API_URL = "https://v2.api.noroff.dev/square-eyes";
 const container = document.querySelector("#container");
+import { showLoader, hideLoader } from "./loader.js";
 
 export async function fetchAndRenderProducts(filterGenre = null) {
+  showLoader();
   try {
     container.innerHTML = "";
     const response = await fetch(API_URL);
@@ -99,10 +101,13 @@ export async function fetchAndRenderProducts(filterGenre = null) {
       "Something went wrong while loading products. PLease try again later"
     );
     container.textContent = "failed to load products";
+  } finally {
+    hideLoader();
   }
 }
 
 export async function fetchAndCreateProduct() {
+  showLoader();
   try {
     const params = new URLSearchParams(window.location.search);
     const id = params.get("id");
@@ -197,5 +202,7 @@ export async function fetchAndCreateProduct() {
       "Something went wrong while loading the product. please try again later"
     );
     container.textContent = "failed to load product";
+  } finally {
+    hideLoader();
   }
 }

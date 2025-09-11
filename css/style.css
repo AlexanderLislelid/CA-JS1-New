@@ -49,6 +49,29 @@ button {
   all: unset;
   cursor: pointer;
 }
+/*------Loader---------*/
+.loader {
+  width: 1em;
+  height: 1em;
+  border: 0.25em solid;
+  border-bottom-color: transparent;
+  border-radius: 50%;
+  box-sizing: border-box;
+  animation: rotation 1s linear infinite;
+  color: var(--color-accent);
+  margin-top: 2rem;
+}
+
+@keyframes rotation {
+  0% {
+    transform: rotate(0deg);
+  }
+
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
 /*------Navigation---------*/
 .navbar {
   position: sticky;
