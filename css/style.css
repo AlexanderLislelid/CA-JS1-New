@@ -422,6 +422,6 @@ footer p {
 
   footer .legal,
   footer .social-media {
-    text-align: center; /* sentrerer innholdet på mobil */
+    text-align: center;
   }
 }
