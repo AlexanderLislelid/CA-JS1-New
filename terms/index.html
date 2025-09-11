@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Profile</title>
+    <script type="module" src="../js/profile.js"></script>
+    <link rel="stylesheet" href="../css/style.css" />
+    <script
+      src="https://kit.fontawesome.com/534136dc01.js"
+      crossorigin="anonymous"
+    ></script>
+  </head>
+  <body>
+    <nav class="navbar">
+      <ul>
+        <li><a href="../index.html">Home</a></li>
+        <li><a href="../profile/index.html">Profile</a></li>
+        <li><a href="../checkout/index.html">Checkout</a></li>
+        <i class="fa-solid fa-cart-shopping" id="cart"></i>
+      </ul>
+    </nav>
+    <h1>Terms of use</h1>
+    <div id="cart-overlay">
+      <div class="cart-panel">
+        <h2>Shopping cart</h2>
+        <div id="cart-container"></div>
+        <p id="cart-sum"></p>
+        <div class="cart-btns">
+          <button id="clear-cart">Clear cart</button>
+          <button id="close-cart">Close</button>
+        </div>
+        <a href="../checkout/index.html" class="checkout-btn">Checkout</a>
+      </div>
+    </div>
+    <footer>
+      <div class="legal">
+        <a href="./index.html" class="active">Terms of use</a>
+        <a href="../privacy/index.html">Privacy policy</a>
+      </div>
+      <div class="social-media">
+        <a href="https://facebook.com"
+          ><i class="fa-brands fa-facebook"></i>Facebook</a
+        >
+        <a href="https://instagram.com"
+          ><i class="fa-brands fa-instagram"></i>Instagram</a
+        >
+      </div>
+      <p>&copy; 2025 Square-Eyes. All rights reserved</p>
+    </footer>
+  </body>
+</html>
