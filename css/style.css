@@ -59,7 +59,8 @@ button {
   box-sizing: border-box;
   animation: rotation 1s linear infinite;
   color: var(--color-accent);
-  margin-top: 2rem;
+  margin-top: 1rem;
+  margin-left: 2rem;
 }
 
 @keyframes rotation {
@@ -112,7 +113,7 @@ nav ul {
 .card img {
   border-top-left-radius: 8px;
   border-top-right-radius: 8px;
-  max-height: 100%;
+  max-height: 100%; /* endre på denne?  */
 }
 .card {
   display: flex;
@@ -432,7 +433,7 @@ footer p {
   .products-container img {
     display: block;
     width: 100%;
-    max-height: 100%;
+    max-height: 100%; /* endre på denne?  */
   }
 }
 @media (max-width: 600px) {
