@@ -405,6 +405,11 @@ footer p {
   .products-container {
     justify-content: center;
   }
+  .products-container img {
+    display: block;
+    width: 100%;
+    height: auto;
+  }
 }
 @media (max-width: 600px) {
   footer {
