@@ -17,7 +17,6 @@ body {
   margin: 0 auto;
   font-family: var(--font-body);
   background-color: var(--color-background);
-
   display: flex;
   flex-direction: column;
 }
@@ -428,9 +427,6 @@ footer p {
   }
   .products-container {
     justify-content: center;
-  }
-  .card {
-    max-height: 590px; /* Ipad mess */
   }
 }
 @media (max-width: 600px) {
