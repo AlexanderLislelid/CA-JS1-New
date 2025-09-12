@@ -334,6 +334,19 @@ nav ul {
   padding: 0.5rem;
   font-size: 1rem;
 }
+.checkout-increase,
+.checkout-decrease {
+  background-color: var(--color-accent);
+  width: 1rem;
+  height: 1rem;
+  padding: 0.1rem;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid var(--color-background);
+  cursor: pointer;
+}
 .checkout {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
@@ -348,14 +361,19 @@ nav ul {
 }
 .checkout-item {
   display: flex;
-  gap: 1rem;
-  align-items: center;
+  flex-direction: column;
+  gap: 0.2rem;
 }
 .order-btn {
   margin-top: 0.8rem;
   text-align: center;
 }
-
+.checkout-price-and-qty {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  margin-bottom: 1rem;
+}
 /*------Footer--------*/
 
 footer {

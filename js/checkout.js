@@ -46,20 +46,60 @@ export function renderCheckout() {
     const title = document.createElement("h2");
     const price = document.createElement("p");
     const qty = document.createElement("p");
+    const increaseBtn = document.createElement("button");
+    const decreaseBtn = document.createElement("button");
+    const priceAndQty = document.createElement("div");
 
     itemDiv.className = "checkout-item";
     title.className = "checkout-title";
     price.className = "checkout-price";
     qty.className = "checkout-qty";
-
+    increaseBtn.className = "checkout-increase";
+    decreaseBtn.className = "checkout-decrease";
+    priceAndQty.className = "checkout-price-and-qty";
     const q = Number(product.quantity || 1);
     const p = Number(product.price || 0);
 
     title.textContent = `${product.title} -`;
     price.textContent = `${p} Kr`;
     qty.textContent = `x ${q}`;
+    increaseBtn.textContent = "+";
+    decreaseBtn.textContent = "-";
 
-    itemDiv.append(title, price, qty);
+    decreaseBtn.addEventListener("click", function () {
+      let cart = getCart();
+
+      for (let i = 0; i < cart.length; i++) {
+        if (cart[i].id === product.id) {
+          if (cart[i].quantity > 1) {
+            cart[i].quantity = cart[i].quantity - 1;
+          } else {
+            cart.splice(i, 1);
+          }
+          break;
+        }
+      }
+
+      localStorage.setItem("cart", JSON.stringify(cart));
+      renderCart();
+      renderCheckout();
+    });
+    increaseBtn.addEventListener("click", function () {
+      let cart = getCart();
+
+      for (let i = 0; i < cart.length; i++) {
+        if (cart[i].id === product.id) {
+          cart[i].quantity = cart[i].quantity + 1;
+          break;
+        }
+      }
+      localStorage.setItem("cart", JSON.stringify(cart));
+      renderCart();
+      renderCheckout();
+    });
+    priceAndQty.append(price, increaseBtn, qty, decreaseBtn);
+    itemDiv.appendChild(title);
+    itemDiv.appendChild(priceAndQty);
     container.appendChild(itemDiv);
 
     total += p * q;
