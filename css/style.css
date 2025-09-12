@@ -422,6 +422,9 @@ footer p {
   display: inline-block;
   margin-top: 1rem;
 }
+.ordernumber {
+  margin: 1rem;
+}
 /*------Profile-------*/
 .acc-details p {
   margin-bottom: 0.8rem;
