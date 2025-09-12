@@ -1,6 +1,6 @@
 // Generate order ID
 
-export function orderId() {
+function orderId() {
   const randomNumber = document.querySelector("#random-number");
   const id = Math.floor(Math.random() * 100000000);
   randomNumber.textContent = `#${id}`;
@@ -8,3 +8,7 @@ export function orderId() {
 }
 
 orderId();
+
+// add to order history ?
+
+let orderHistory = [];
