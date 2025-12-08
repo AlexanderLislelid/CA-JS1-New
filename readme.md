@@ -15,9 +15,10 @@ Users can browse movies, view details, and add films to a rental cart.
 
 ### Running the project
 
-
+```bash
 The project runs directly in the browser.  
 Open `index.html` locally or view the hosted version on GitHub Pages:  
+```
 [View the live demo](https://alexanderlislelid.github.io/CA-JS1-New/)
 
 
