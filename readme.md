@@ -1,62 +1,32 @@
-# Project Title
+# Square Eyes
 
-Short description of what the project does or is about.
+A simple movie rental website built with HTML, CSS and JavaScript.  
+Users can browse movies, view details, and add films to a rental cart.
 
 ## Features
 
-- Feature 1
-- Feature 2
-- Feature 3
+- 🎞️ Displays movies from a provided API  
+- 📄 Dynamic movie detail pages  
+- 🛒 Add-to-cart functionality using localStorage
+- 🔍 Search and filter movies  
+- ⚠️ Handles loading states and error messages  
+- 📱 Fully responsive design  
 
-## Prerequisites
-
-- Node.js (v20+)
-- npm
-
-## Getting Started
-
-### Installation
-
-```bash
-npm install
-```
 
 ### Running the project
 
 ```bash
-npm run dev
+The project runs directly in the browser.  
+Open `index.html` locally or view the hosted version on GitHub Pages.
 ```
 
-### Running tests
-
-```bash
-npm run test
-```
-
-## Environment Variables
-
-Create a `.env` file in the root directory:
-
-```bash
-API_KEY=your-api-key-here
-BASE_URL=https://example.com/api
-```
-
-## Available Scripts
-
-- `npm run dev` - Start development server
-- `npm run build` - Build for production
-- `npm run test` - Run tests
-- `npm run lint` - Run ESLint
 
 ## Technologies
 
 - JavaScript
 - HTML
 - CSS
-- ESLint
 - Prettier
 
 ## Author
-
-Your name or GitHub username
+Alexander Lislelid
