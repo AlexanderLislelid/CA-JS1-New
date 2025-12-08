@@ -5,13 +5,13 @@ Users can browse movies, view details, and add films to a rental cart.
 
 ## Features
 
+```bash
 - 🎞️ Displays movies from a provided API  
 - 📄 Dynamic movie detail pages  
 - 🛒 Add-to-cart functionality using localStorage
-- 🔍 Search and filter movies  
-- ⚠️ Handles loading states and error messages  
+- 🔍 Filter movies by genre
 - 📱 Fully responsive design  
-
+```
 
 ### Running the project
 
