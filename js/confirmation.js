@@ -8,7 +8,3 @@ function orderId() {
 }
 
 orderId();
-
-// add to order history ?
-
-let orderHistory = [];
