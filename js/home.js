@@ -83,3 +83,24 @@ filterOnSale.addEventListener("click", (event) => {
   fetchAndRenderProducts("on-sale");
   highLighted.textContent = "On sale";
 });
+
+// Search functionality
+
+const searchInput = document.getElementById("search");
+
+searchInput.addEventListener("input", () => {
+  const searchValue = searchInput.value.trim().toLowerCase();
+
+  const cards = document.querySelectorAll(".card");
+
+  cards.forEach((card) => {
+    const titleElement = card.querySelector("h2");
+    const titleText = titleElement.textContent.toLowerCase();
+
+    if (titleText.includes(searchValue)) {
+      card.style.display = "";
+    } else {
+      card.style.display = "none";
+    }
+  });
+});
