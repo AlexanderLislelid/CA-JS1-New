@@ -40,7 +40,6 @@ const filterDrama = document.querySelector(".drama");
 const filterHorror = document.querySelector(".horror");
 const filterOnSale = document.querySelector(".on-sale");
 let highLighted = document.querySelector(".highlighted");
-console.log(highLighted);
 
 filterAll.addEventListener("click", (event) => {
   event.preventDefault();
